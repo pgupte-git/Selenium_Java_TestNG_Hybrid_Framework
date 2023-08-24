@@ -156,8 +156,8 @@ public class BaseTest {
 		
 		//get syncronized threadLocalDriver driver
 	    public static synchronized  WebDriver getDriver(){
-	    	return threadLocalDriver.get();
-	    	//return driver;
+	    	//return threadLocalDriver.get();
+	    	return driver;
 	    }
 	    
 	    
