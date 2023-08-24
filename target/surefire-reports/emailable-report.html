@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "https://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>TestNG Report</title>
+<style type="text/css">table {margin-bottom:10px;border-collapse:collapse;empty-cells:show}th,td {border:1px solid #009;padding:.25em .5em}th {vertical-align:bottom}td {vertical-align:top}table a {font-weight:bold}.stripe td {background-color: #E6EBF9}.num {text-align:right}.passedodd td {background-color: #3F3}.passedeven td {background-color: #0A0}.skippedodd td {background-color: #DDD}.skippedeven td {background-color: #CCC}.failedodd td,.attn {background-color: #F33}.failedeven td,.stripe .attn {background-color: #D00}.stacktrace {white-space:pre;font-family:monospace}.totop {font-size:85%;text-align:center;border-bottom:2px solid #000}.invisible {display:none}</style>
+</head>
+<body>
+<table>
+<tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
+<tr><th colspan="8">Parallel Test Executions</th></tr>
+<tr><td><a href="#t0">SearchProduct</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">23,864</td><td>parallel</td><td></td></tr>
+<tr class="stripe"><td><a href="#t1">Product Purchase as GuestUser</a></td><td class="num">5</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">65,586</td><td>parallel</td><td></td></tr>
+<tr><th>Total</th><th class="num">5</th><th class="num">0</th><th class="num">0</th><th class="num attn">2</th><th class="num">89,450</th><th colspan="2"></th></tr>
+</table>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Parallel Test Executions</th></tr></tbody><tbody id="t0"><tr><th colspan="4">SearchProduct &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.testcases.SearchProductTest</td><td><a href="#m0">verify_search_functionality</a></td><td rowspan="1">1692899541202</td><td rowspan="1">9924</td></tr></tbody>
+<tbody id="t1"><tr><th colspan="4">Product Purchase as GuestUser &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.testcases.ProductPurchaseTest</td><td><a href="#m1">verify_checkout_process_as_member_user</a></td><td rowspan="1">1692899573709</td><td rowspan="1">20108</td></tr><tr><th colspan="4">Product Purchase as GuestUser &#8212; passed</th></tr><tr class="passedeven"><td rowspan="5">com.testcases.ProductPurchaseTest</td><td><a href="#m2">verify_add_product_to_cart</a></td><td rowspan="1">1692899541202</td><td rowspan="1">9045</td></tr><tr class="passedeven"><td><a href="#m3">verify_checkout_process_as_guest_user</a></td><td rowspan="1">1692899557997</td><td rowspan="1">15704</td></tr><tr class="passedeven"><td><a href="#m4">verify_shopping_cart_total_amount_after_gift_wrapping_cost</a></td><td rowspan="1">1692899554328</td><td rowspan="1">2574</td></tr><tr class="passedeven"><td><a href="#m5">verify_update_shopping_cart</a></td><td rowspan="1">1692899552508</td><td rowspan="1">1367</td></tr><tr class="passedeven"><td><a href="#m6">verify_user_shopping_cart</a></td><td rowspan="1">1692899550863</td><td rowspan="1">1635</td></tr></tbody>
+</table>
+<h2>SearchProduct</h2><h3 id="m0">com.testcases.SearchProductTest#verify_search_functionality</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: Search result Title not matched expected [Digital Storm VANQUISH 3 Custom Performance PCddd] but found [Digital Storm VANQUISH 3 Custom Performance PC]
+	at com.testcases.SearchProductTest.verify_search_functionality(SearchProductTest.java:64)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 22 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Product Purchase as GuestUser</h2><h3 id="m1">com.testcases.ProductPurchaseTest#verify_checkout_process_as_member_user</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>{country=India, firstname=pratik, address=plot no 8, Bajaj Appt, Nagpur, code=555, city=Nagpur, year=2028, lastname=Guptey, month=02, phone=9966332211, postalcode=441002, cardholdername=Prateek Guptey, cardtype=Visa, cardnumber=4111111111111111, email=pgupte@testmail.com}</td><td>org.testng.TestRunner@7e56ae99</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//button[@id=&apos;checkout&apos;]&quot;}
+  (Session info: chrome=116.0.5845.97)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [39824eab7e94558787154196dfa4aa86, findElement {using=xpath, value=//button[@id=&apos;checkout&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.97, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\HP\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50674}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50674/devtoo..., se:cdpVersion: 116.0.5845.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 39824eab7e94558787154196dfa4aa86
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy21.click(Unknown Source)
+	at com.pageobjects.CartPage.clickoncheckoutbutton(CartPage.java:146)
+	at com.testcases.ProductPurchaseTest.verify_checkout_process_as_member_user(ProductPurchaseTest.java:242)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 22 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">com.testcases.ProductPurchaseTest#verify_add_product_to_cart</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>org.testng.TestRunner@7e56ae99</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">com.testcases.ProductPurchaseTest#verify_checkout_process_as_guest_user</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>{country=India, firstname=pratik, address=plot no 8, Bajaj Appt, Nagpur, code=555, city=Nagpur, year=2028, lastname=Guptey, month=02, phone=9966332211, postalcode=441002, cardholdername=Prateek Guptey, cardtype=Visa, cardnumber=4111111111111111, email=pgupte@testmail.com}</td><td>org.testng.TestRunner@7e56ae99</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">com.testcases.ProductPurchaseTest#verify_shopping_cart_total_amount_after_gift_wrapping_cost</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>org.testng.TestRunner@7e56ae99</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">com.testcases.ProductPurchaseTest#verify_update_shopping_cart</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">com.testcases.ProductPurchaseTest#verify_user_shopping_cart</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+</body>
+</html>
