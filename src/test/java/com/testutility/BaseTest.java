@@ -3,6 +3,8 @@ package com.testutility;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.time.Duration;
 import java.util.HashMap;
@@ -11,12 +13,14 @@ import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
@@ -69,14 +73,14 @@ public class BaseTest {
 		
 		public static String default_browser = getconfigdata().getProperty("browser");
 		public static String local_enviornment = getconfigdata().getProperty("env");
-		public static String production_enviornment = getconfigdata().getProperty("env2");
+		public static String browserstack_enviornment = getconfigdata().getProperty("env2");
 		
 		
 		public static String browsername=System.getProperty("browser",default_browser);
 		public static String enviornment = System.getProperty("env",local_enviornment);
 		
 		@BeforeTest(alwaysRun=true)
-		public void initializeBrowsers()
+		public void initializeBrowsers() throws MalformedURLException
 		{
 			browsername = System.getProperty("browser") != null ? System.getProperty("browser")
 					:System.getProperty("browser",default_browser);
@@ -116,31 +120,10 @@ public class BaseTest {
 				
 			}
 			
-			if(enviornment.equals(production_enviornment))
+			if(enviornment.equals(browserstack_enviornment))  // Used for Cross browser Testing
 			{
-				if(browsername.contains("chrome"))
-				{
-					driver = new ChromeDriver();
-					System.out.println("Chrome is selected");
-				}
-				
-				else if(browsername.contains("firefox"))
-				{
-					driver = new FirefoxDriver();
-					System.out.println("Firefox is selected");
-				}
-				
-				else if(browsername.contains("Edge"))
-				{
-					driver = new EdgeDriver();
-					System.out.println("MS Edge is selected");
-				}
-				
-				else
-				{
-					System.out.println("Browser is not available");
-				}
-				
+				MutableCapabilities caps = new MutableCapabilities();
+				driver = new RemoteWebDriver(new URL("https://hub.browserstack.com/wd/hub"),caps);
 			}
 			
 			//set Driver

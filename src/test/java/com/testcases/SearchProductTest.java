@@ -61,6 +61,7 @@ public class SearchProductTest extends BaseTest{
 		catch(AssertionError e)
 		{
 			searchp.addRedBordertoMessage();
+			searchp.getfullpagescreenhot("verify_search_functionality");
 			Assert.assertEquals(producttitle, dataprop.getProperty("desktop_pcname"), "Search result Title not matched");
 			step("Product name not found");
 		}
