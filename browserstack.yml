@@ -1,5 +1,5 @@
-userName: pratiktestgupt_Vi1cez
-accessKey: 2TbfhEeVC8aaQyDyGNmQ
+userName: YOUR_Username
+accessKey: Your_Access_Key
 framework: testng
 platforms:
   - os: Windows
