@@ -1,5 +1,5 @@
 
-# Selenium Hybrid Framework using Java+TestNG+POM+Maven
+# Selenium Hybrid Framework using Java+TestNG+PageObjectModal
 
 The Selenium Hybrid Framework is designed to provide a scalable and maintainable solution for automated web testing. It combines the power of Java programming language, TestNG testing framework, Maven for build management, Page Object Model design pattern for improved code organization, Allure Reports for enhanced reporting, and Jenkins for seamless CI/CD integration.
 
@@ -45,6 +45,7 @@ The Selenium Hybrid Framework is designed to provide a scalable and maintainable
 - Page Object Design Pattern
 - Allure Reports
 - Integration with Jenkins
+- BrowserStack Integration for Cross Browser Testing.
 
 ## About the Project
 I have used an Ecommerce Application to automate the following scenarios:
@@ -86,3 +87,18 @@ After running the tests, you can generate Allure Reports using the following com
 
 ## Jenkins CI 
 This framework is integrated with Jenkins to automate the testing process.
+
+## Cross Browser Testing
+This framework is integrated with BrowserStack cloud for cross browser testing process. It uses the BrowserStack SDK to run tests on BrowserStack.
+To run the test on BrowserStack, follow below instruction.
+
+- Add the username and Access key in the browserstack.yml file
+username = Your_username
+accesskey = Your_Access_Key
+
+- run the test as maven command using the profile name set in the pom.xml file
+
+```bash
+  mvn clean test -Denv=browserstack -P Profile_name
+
+```
