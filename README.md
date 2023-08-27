@@ -1,5 +1,5 @@
 
-# Selenium Hybrid Framework using Java+TestNG+PageObjectModal
+# Selenium Hybrid Framework using Java+TestNG+POM+Maven
 
 The Selenium Hybrid Framework is designed to provide a scalable and maintainable solution for automated web testing. It combines the power of Java programming language, TestNG testing framework, Maven for build management, Page Object Model design pattern for improved code organization, Allure Reports for enhanced reporting, and Jenkins for seamless CI/CD integration.
 
